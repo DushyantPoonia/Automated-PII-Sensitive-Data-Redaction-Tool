@@ -13,10 +13,6 @@ Analyzer's recognizer framework, spaCy named entity recognition (NER), and
 custom Presidio pattern recognizers for Indian Aadhaar-style and PAN-style
 identifiers.
 
-The application is intended as a BTech CSE/NLP learning project and
-demonstration. Automated detection is imperfect; review the output before
-sharing it.
-
 ## 3. Problem Statement
 
 Emails, reports, and other text can contain names, contact details, locations,
