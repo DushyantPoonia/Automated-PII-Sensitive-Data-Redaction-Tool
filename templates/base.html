@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Detect and redact sensitive information from text before sharing.">
+    <title>{% block title %}SecureText — privacy-first redaction{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block head %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header" id="top">
+        <div class="nav-shell">
+            <a class="brand" href="{{ url_for('home') }}" aria-label="SecureText home">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <path d="M20 3.5 34 9v9.2c0 8.2-5.7 14.8-14 18.3C11.7 33 6 26.4 6 18.2V9l14-5.5Z" fill="currentColor" opacity=".14"/>
+                        <path d="M20 3.5 34 9v9.2c0 8.2-5.7 14.8-14 18.3C11.7 33 6 26.4 6 18.2V9l14-5.5Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+                        <rect x="14" y="17" width="12" height="9" rx="2" fill="currentColor"/>
+                        <path d="M16.5 17v-2.2a3.5 3.5 0 0 1 7 0V17" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                        <circle cx="20" cy="21.5" r="1" fill="white"/>
+                    </svg>
+                </span>
+                <span class="brand-name">SecureText</span>
+            </a>
+
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="{{ url_for('home') }}#top">Home</a>
+                <a href="{{ url_for('home') }}#how-it-works">How It Works</a>
+                <a href="{{ url_for('home') }}#about">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-shell">
+            <a class="brand brand-footer" href="{{ url_for('home') }}">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <path d="M20 3.5 34 9v9.2c0 8.2-5.7 14.8-14 18.3C11.7 33 6 26.4 6 18.2V9l14-5.5Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
+                        <path d="m14.5 20.5 3.5 3.5 7.5-8" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                <span class="brand-name">SecureText</span>
+            </a>
+            <p>Thoughtful redaction for more confident sharing.</p>
+            <span class="footer-note">Privacy starts before you share.</span>
+        </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>
